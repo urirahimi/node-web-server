@@ -30,7 +30,7 @@ hbs.registerHelper('getCurrentYear', () => {
 });
 
 hbs.registerHelper('screamIt', (text) => {
-  return text.toUpperCase();
+  return text;
 });
 
 app.get('/', (req, res) => {
@@ -45,6 +45,13 @@ app.get('/about', (req, res) => {
     pageTitle: 'About Page'
   });
 });
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs'), {
+        pageTitle: 'Projects Page',
+       welcomeMessage: 'Uri Makes Cool Projects'
+    }
+})
 
 // /bad - send back json with errorMessage
 app.get('/bad', (req, res) => {
